@@ -2,6 +2,8 @@ package mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "clientes")
 public class Cliente {
@@ -10,17 +12,18 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
     private Integer idCliente;
-
     private String nombre;
-
     private String apellido;
-
     private Long celular;
-
     private String direccion;
 
     @Column(name = "correo_electronico")
     private String correoElectronico;
+
+
+    //un cliente tiene muchas compras
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
 
     private Boolean activo;
 
