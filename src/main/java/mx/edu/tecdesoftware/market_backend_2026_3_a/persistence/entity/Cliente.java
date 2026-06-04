@@ -82,4 +82,12 @@ public class Cliente {
     public void setActivo(Boolean activo) {
         this.activo = activo;
     }
+
+    public List<Compra> getCompras() {
+        return compras;
+    }
+
+    public void setCompras(List<Compra> compras) {
+        this.compras = compras;
+    }
 }
