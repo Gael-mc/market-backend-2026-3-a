@@ -42,4 +42,12 @@ public class Categoria {
     public void setActivo(Boolean activo) {
         this.activo = activo;
     }
+
+    public List<Producto> getProducto() {
+        return Producto;
+    }
+
+    public void setProducto(List<Producto> producto) {
+        Producto = producto;
+    }
 }
