@@ -2,17 +2,20 @@ package mx.edu.tecdesoftware.market_backend_2026_3_a.domain;
 
 public class Product {
 
-    private int productId;
+    private Integer productId;
     private String name;
-    private int categoryId;
-    private double price;
-    private int stock;
-    private boolean active;
+    private Integer categoryId;
+    private Double price;
+    private Integer stock;
+    private Boolean active;
     private Category category;
 
-
-    public int getProductId() {
+    public Integer getProductId() {
         return productId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public String getName() {
@@ -23,35 +26,35 @@ public class Product {
         this.name = name;
     }
 
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getStock() {
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 
-    public boolean isActive() {
+    public Boolean getActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(Boolean active) {
         this.active = active;
     }
 
@@ -61,12 +64,5 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-
-
-
     }
 }

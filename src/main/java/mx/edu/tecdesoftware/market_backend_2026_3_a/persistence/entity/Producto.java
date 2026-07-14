@@ -1,7 +1,6 @@
 package mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.AnyDiscriminatorImplicitValues;
 
 @Entity
 @Table(name = "productos")
@@ -21,16 +20,15 @@ public class Producto {
     private String codigoBarras;
 
     @Column(name = "id_venta")
-    private double precioVenta;
+    private Double precioVenta;
 
     @Column(name = "id_stock")
     private Integer cantidadStock;
 
-    private boolean estado;
+    private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria",
-    insertable = false , updatable = false)
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
     public Integer getIdProducto() {
@@ -65,11 +63,11 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public double getPrecioVenta() {
+    public Double getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(double precioVenta) {
+    public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
     }
 
@@ -81,11 +79,11 @@ public class Producto {
         this.cantidadStock = cantidadStock;
     }
 
-    public boolean isEstado() {
+    public Boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 

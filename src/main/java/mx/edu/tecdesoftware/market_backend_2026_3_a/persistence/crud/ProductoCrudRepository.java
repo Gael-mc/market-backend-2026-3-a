@@ -8,16 +8,9 @@ import java.util.Optional;
 
 public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
 
-    //query method
-    /*
-    SELECT *
-    FROM productos
-    WHERE id_categoria = ?
-    ORDER BY nombre ASC
-     */
-    //Obtener una lista de productos filtrados por id categoria
-    // y ordenar ascendentemente por nombre
+    // SELECT * FROM producto WHERE id_categoria = ? ORDER BY nombre ASC;
     List<Producto> findByIdcategoriaOrderByNombreAsc(int idCategoria);
 
-    Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidad, boolean estado);
+    // SELECT * FROM producto WHERE cantidad_stock < ? AND estado = ?;
+    Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidadStock, boolean estado);
 }

@@ -2,41 +2,43 @@ package mx.edu.tecdesoftware.market_backend_2026_3_a.domain.service;
 
 import mx.edu.tecdesoftware.market_backend_2026_3_a.domain.Product;
 import mx.edu.tecdesoftware.market_backend_2026_3_a.domain.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class ProductService {
 
-    private final ProductRepository productRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
-    public ProductService(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
-
-    public List<Product> getAll(){
+    public List<Product> getAll() {
         return productRepository.getAll();
     }
 
-    public Optional<Product> getProduct(int productId){
+    public Optional<Product> getProduct(int productId) {
         return productRepository.getProduct(productId);
     }
 
-    public Optional<List<Product>> getByCategory(int categoryId){
-        return productRepository.getCategory(categoryId);
+    public Optional<List<Product>> getByCategory(int categoryId) {
+        return productRepository.getByCategory(categoryId);
     }
 
-    public Product save(Product product){
+    public Optional<List<Product>> getScarceProducts(int quantity) {
+        return productRepository.getScarceProducts(quantity);
+    }
+
+    public Product save(Product product) {
         return productRepository.save(product);
     }
 
-    public boolean delete(int productId){
-        //Verificar que existe antes de borrar
-        if (getProduct(productId).isPresent()){
+    // Regresa true si el producto existía y se eliminó, false si no existe
+    public boolean delete(int productId) {
+        return getProduct(productId).map(product -> {
             productRepository.delete(productId);
             return true;
-        }
-        return false;
+        }).orElse(false);
     }
 }
