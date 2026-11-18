@@ -66,4 +66,7 @@ Desktop.ini
 *.bak
 *.tmp
 
-*.properties
+*.properties_to_delete/
+
+### Credenciales de base de datos por perfil (no subir a GitHub) ###
+application-*.properties
