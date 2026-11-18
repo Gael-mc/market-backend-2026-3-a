@@ -75,10 +75,10 @@ public class ProductController {
                                     name = "Example product",
                                     value = """
                                             {
-                                              "name": "Mirinda",
-                                              "categoryId": 1,
-                                              "price": 18.5,
-                                              "stock": 100,
+                                              "name": "Super Mario Bros. Wonder",
+                                              "categoryId": 2,
+                                              "price": 1199.0,
+                                              "stock": 60,
                                               "active": true
                                             }
                                             """
